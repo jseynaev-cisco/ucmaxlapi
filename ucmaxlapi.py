@@ -21,10 +21,10 @@ class RawAxl:
 
         this will set the necessary user, passwd, server and version
 
-        :param username (str):
-        :param password (str):
-        :param server (str): server name or IP where the AXL service is running
-        :param version (str): version of CUCM, defaults to 10.5
+        :param username: (str)
+        :param password: (str)
+        :param server: (str) server name or IP where the AXL service is running
+        :param version: (str) version of CUCM, defaults to 10.5
         """
         self.username = username
         self.password = password
@@ -32,6 +32,15 @@ class RawAxl:
         self.version = version
 
     def execute(self, call, args):
+        """Execute an AXL Call
+
+        Given the method name and a Dict with the arguments, this method will build the SOAP message,
+        send the call and convert the answer into a Dict and return
+
+        :param call: (str) the method name
+        :param args: (Dict) a dictionary for the arguments needed
+        :return: a dictionary with the returned data
+        """
         # create the XML
         envelope = "<?xml version='1.0' encoding='utf8'?>"
         envelope += '<ns0:Envelope xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/" ' \
@@ -71,7 +80,7 @@ class RawAxl:
 
 if __name__ == '__main__':
     """
-    test cases, goal is to give it a dict and get a dict back
+    test cases, the RawAXL might not work for all calls, but it should do for most
     """
     axl = RawAxl(*sys.argv[1:])
 
