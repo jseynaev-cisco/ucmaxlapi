@@ -1,10 +1,10 @@
 # ucmaxlapi
 
-#####NAME
+##### NAME
     ucmaxlapi
-#####FILE
+##### FILE
     ucmaxlapi.py
-#####CLASSES
+##### CLASSES
     RawAxl
     
     class RawAxl
@@ -37,7 +37,7 @@
      |      :param args (Dict): a dictionary for the arguments needed
      |      :return: a dictionary with the returned data
 
-#####TESTS
+##### TESTS
 Run the module as a script to see some basic calls.   
 The examples are all 'read' ones, so they are safe to run, althoug they may return 'not found' errors 
 for your system (the commented out example will 'add' something, uncomment on your own risk)
